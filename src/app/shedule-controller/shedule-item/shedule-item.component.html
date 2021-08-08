@@ -1,0 +1,9 @@
+<article class="bg-light" [id]="sheduleItem.id">
+  <div class="date">{{sheduleItem.date | date:'EEEE, d MMMM y'}}</div>
+  <div class="name">{{sheduleItem.name}}</div>
+  <div  class="sheduleItems col">
+    <div *ngFor="let time of sheduleItem.workTimes" class="row">
+      {{time.toLocaleTimeString('ru-RU', {formatMatcher: 'basic'}) }}
+    </div>
+  </div>
+</article>

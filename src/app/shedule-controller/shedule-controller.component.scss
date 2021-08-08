@@ -1,0 +1,11 @@
+.shedule-container{
+  display: flex;
+  justify-content: left;
+  gap: 15px;
+}
+
+.shedule__item{
+  max-width: 320px;
+  padding: 5px;
+  border: 1px solid lightblue;
+}

@@ -1,0 +1,15 @@
+<ul class="list-group spec-list">
+  <li *ngFor="let spec of specList" class="list-group-item form-check spec-list__item">
+      <input
+        class="form-check-input spec-list__check"
+        type="checkbox"
+        [value]="spec.id"
+        [id]="spec.id"
+        [checked]="spec.checked"
+        (click)="onSpecialistClick(spec)"
+      >
+      <label class="form-check-label" [for]="spec.id">
+        {{spec.name}}
+      </label>
+  </li>
+</ul>

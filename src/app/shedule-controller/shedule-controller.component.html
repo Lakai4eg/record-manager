@@ -1,0 +1,9 @@
+<div *ngIf="allSheduleItems.length > 0; else emptySheduleItems" class="bg-light text-center shedule-container">
+  <app-shedule-item *ngFor="let item of allSheduleItems"
+    class="shedule__item"
+    [sheduleItem] = item
+  ></app-shedule-item>
+</div>
+<ng-template #emptySheduleItems>
+  <p>Выберите врача</p>
+</ng-template>
