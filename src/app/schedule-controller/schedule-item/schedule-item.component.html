@@ -1,0 +1,14 @@
+<article class="bg-light">
+  <div class="date">{{scheduleItem.date}}</div>
+  <div class="name">{{scheduleItem.name}}</div>
+  <ul class="scheduleItems">
+    <li class="shedule__item" (click)="timeClick($event)" *ngFor="let item of scheduleItem.workTimes">
+      <p class="text-truncate shedule__text bg-success" *ngIf="item.name; else showTime">
+        {{item.name}}
+      </p>
+      <ng-template #showTime>
+        <p>{{item.time}}</p>
+      </ng-template>
+    </li>
+  </ul>
+</article>

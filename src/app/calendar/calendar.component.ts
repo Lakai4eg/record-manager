@@ -9,7 +9,7 @@ import * as moment from "moment";
 export class CalendarComponent implements OnInit {
   @Output() onDateChange = new EventEmitter<string>()
 
-  inputDate:string = moment().format('yyyy-DD-MM')
+  inputDate:string = moment().format('yyyy-MM-DD')
 
   inputDateChange(){
     this.onDateChange.emit(this.inputDate.toString())

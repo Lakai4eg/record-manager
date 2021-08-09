@@ -6,8 +6,8 @@ import localeRu from '@angular/common/locales/ru';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SpecialistListComponent } from './specialist-list/specialist-list.component';
-import { SheduleControllerComponent } from './shedule-controller/shedule-controller.component';
-import { SheduleItemComponent } from './shedule-controller/shedule-item/shedule-item.component';
+import { scheduleControllerComponent } from './schedule-controller/schedule-controller.component';
+import { scheduleItemComponent } from './schedule-controller/schedule-item/schedule-item.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import {FormsModule} from "@angular/forms";
 
@@ -17,8 +17,8 @@ registerLocaleData(localeRu);
   declarations: [
     AppComponent,
     SpecialistListComponent,
-    SheduleControllerComponent,
-    SheduleItemComponent,
+    scheduleControllerComponent,
+    scheduleItemComponent,
     CalendarComponent,
   ],
     imports: [

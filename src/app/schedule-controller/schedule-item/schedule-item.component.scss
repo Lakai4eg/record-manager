@@ -1,0 +1,13 @@
+.scheduleItems{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 0;
+}
+
+.shedule__text{
+  max-width: 200px;
+  display: block;
+}

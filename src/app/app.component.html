@@ -3,7 +3,7 @@
     <h1>Запись к врачу</h1>
   </header>
   <main class="row">
-    <aside class="col">
+    <aside class="col right-menu">
       <app-calendar
         class="row"
         (onDateChange)="updateDateSelected($event)"
@@ -15,10 +15,10 @@
       >
       </app-specialist-list>
     </aside>
-    <app-shedule-controller
-      class="col"
-      [allSheduleItems]="allSheduleItems">
-    </app-shedule-controller>
+    <app-schedule-controller
+      class="col shedule"
+      [allscheduleItems]="allscheduleItems">
+    </app-schedule-controller>
   </main>
   <footer class="card-footer text-center">2021г.</footer>
 </div>

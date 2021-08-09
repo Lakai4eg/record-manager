@@ -1,0 +1,10 @@
+<div *ngIf="allscheduleItems.length > 0; else emptyscheduleItems" class="bg-light text-center schedule-container">
+  <app-schedule-item *ngFor="let item of allscheduleItems"
+    class="schedule__item"
+                    [scheduleItem]="item"
+  ></app-schedule-item>
+</div>
+
+<ng-template #emptyscheduleItems>
+  <p>Выберите врача</p>
+</ng-template>
