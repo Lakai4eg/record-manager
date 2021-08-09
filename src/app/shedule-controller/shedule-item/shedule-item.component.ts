@@ -26,6 +26,7 @@ export class SheduleItemComponent implements OnInit {
   }
 
   getTimes = function (startTime: Date, endTime: Date) :Date[]{
+    //Т.к. мы не получаем с бэкэнда занятые интервалы, функция создает их пустыми
     let workTimes: Date[] = []
     let tmp :Date = ((startTime:Date)=>new Date(startTime))(startTime)
     workTimes.push(tmp)
@@ -40,13 +41,16 @@ export class SheduleItemComponent implements OnInit {
     return workTimes
   }
 
+  timeClick(evt: Event){
+    console.log(evt)
+  }
 
   constructor() {
-
   }
 
   ngOnInit(): void {
     this.getSheduleItem(this.sheduleItem)
+    console.log(this.sheduleItem)
   }
 
 }

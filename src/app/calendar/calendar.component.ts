@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import * as moment from "moment";
 
 @Component({
   selector: 'app-calendar',
@@ -8,7 +9,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class CalendarComponent implements OnInit {
   @Output() onDateChange = new EventEmitter<string>()
 
-  inputDate:number = Date.now()
+  inputDate:string = moment().format('yyyy-DD-MM')
 
   inputDateChange(){
     this.onDateChange.emit(this.inputDate.toString())
@@ -17,6 +18,7 @@ export class CalendarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.inputDateChange()
   }
 
 }

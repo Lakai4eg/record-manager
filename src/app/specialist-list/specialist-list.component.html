@@ -1,4 +1,4 @@
-<ul class="list-group spec-list">
+<ul *ngIf="specList.length > 0; else noWorkingSpecs" class="list-group spec-list">
   <li *ngFor="let spec of specList" class="list-group-item form-check spec-list__item">
       <input
         class="form-check-input spec-list__check"
@@ -13,3 +13,7 @@
       </label>
   </li>
 </ul>
+
+<ng-template #noWorkingSpecs>
+  Нет ни одного врача, работающего сегодня.
+</ng-template>

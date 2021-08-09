@@ -10,7 +10,6 @@ import { SheduleControllerComponent } from './shedule-controller/shedule-control
 import { SheduleItemComponent } from './shedule-controller/shedule-item/shedule-item.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import {FormsModule} from "@angular/forms";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 registerLocaleData(localeRu);
 
@@ -20,7 +19,7 @@ registerLocaleData(localeRu);
     SpecialistListComponent,
     SheduleControllerComponent,
     SheduleItemComponent,
-    CalendarComponent
+    CalendarComponent,
   ],
     imports: [
         BrowserModule,

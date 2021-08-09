@@ -10,16 +10,14 @@
       ></app-calendar>
       <app-specialist-list
         class="row"
-        [specList]="allSpec"
+        [specList]="workingSpecs"
         (onSpecClick)="updateShowedSpec($event)"
       >
       </app-specialist-list>
     </aside>
     <app-shedule-controller
       class="col"
-      [allSheduleItems]="allSheduleItems"
-    >
-
+      [allSheduleItems]="allSheduleItems">
     </app-shedule-controller>
   </main>
   <footer class="card-footer text-center">2021г.</footer>
