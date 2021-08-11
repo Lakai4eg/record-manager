@@ -1,0 +1,29 @@
+<div class="shadow">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Запись на прием</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="regData.closeForm()"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">Врач: {{regData.record.specName}}</div>
+        <div class="mb-3">День записи: {{regData.record.date}}</div>
+        <div class="mb-3">Время записи: {{regData.record.time}}</div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="FIO">ФИО</span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Введите ФИО"
+            aria-label="FIO"
+            [(ngModel)]="regData.record.patientName"
+          >
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="regData.closeForm()">Отмена</button>
+        <button type="button" class="btn btn-primary" (click)="recordAdd()">Записать</button>
+      </div>
+    </div>
+  </div>
+</div>

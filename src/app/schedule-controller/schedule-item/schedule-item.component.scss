@@ -7,6 +7,14 @@
   padding: 0;
 }
 
+.open-time{
+  cursor: pointer;
+}
+
+.closed-time{
+  cursor: not-allowed;
+}
+
 .shedule__text{
   max-width: 200px;
   display: block;

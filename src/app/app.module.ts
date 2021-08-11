@@ -10,6 +10,7 @@ import { scheduleControllerComponent } from './schedule-controller/schedule-cont
 import { scheduleItemComponent } from './schedule-controller/schedule-item/schedule-item.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import {FormsModule} from "@angular/forms";
+import { RegisterFormComponent } from './register-form/register-form.component';
 
 registerLocaleData(localeRu);
 
@@ -20,6 +21,7 @@ registerLocaleData(localeRu);
     scheduleControllerComponent,
     scheduleItemComponent,
     CalendarComponent,
+    RegisterFormComponent,
   ],
     imports: [
         BrowserModule,
@@ -27,7 +29,7 @@ registerLocaleData(localeRu);
         FormsModule,
     ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'ru' }
+    { provide: LOCALE_ID, useValue: 'ru' },
   ],
   bootstrap: [AppComponent]
 })

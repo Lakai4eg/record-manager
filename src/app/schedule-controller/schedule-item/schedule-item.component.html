@@ -2,13 +2,14 @@
   <div class="date">{{scheduleItem.date}}</div>
   <div class="name">{{scheduleItem.name}}</div>
   <ul class="scheduleItems">
-    <li class="shedule__item" (click)="timeClick($event)" *ngFor="let item of scheduleItem.workTimes">
-      <p class="text-truncate shedule__text bg-success" *ngIf="item.name; else showTime">
+    <li class="schedule__item" *ngFor="let item of scheduleItem.workTimes">
+      <div class="border-bottom bg-success bg-gradient text-truncate closed-time" *ngIf="item.name; else showTime">
         {{item.name}}
-      </p>
+      </div>
       <ng-template #showTime>
-        <p>{{item.time}}</p>
+        <div class="border-bottom open-time" (click)="regData.openForm(scheduleItem.id, scheduleItem.name, scheduleItem.date, item.time)">{{item.time}}</div>
       </ng-template>
     </li>
   </ul>
 </article>
+

@@ -1,24 +1,28 @@
+<app-register-form
+  [hidden]="regData.regFormHidden"
+  (onRecordAdd)="addRecord()"
+></app-register-form>
 <div class="container">
-  <header class="card-header">
+  <header class="bg-dark text-white p-2 mb-auto text-center">
     <h1>Запись к врачу</h1>
   </header>
-  <main class="row">
-    <aside class="col right-menu">
+  <main class="row d-flex w-100">
+    <aside class="d-flex flex-column mt-1 mb-1">
       <app-calendar
         class="row"
         (onDateChange)="updateDateSelected($event)"
       ></app-calendar>
       <app-specialist-list
-        class="row"
+        class="row d-flex flex-column"
         [specList]="workingSpecs"
         (onSpecClick)="updateShowedSpec($event)"
       >
       </app-specialist-list>
     </aside>
     <app-schedule-controller
-      class="col shedule"
-      [allscheduleItems]="allscheduleItems">
+      class="schedule ml-3 mt-1 mb-1"
+      [allscheduleItems]="allScheduleItems">
     </app-schedule-controller>
   </main>
-  <footer class="card-footer text-center">2021г.</footer>
+  <footer class="bg-dark text-white p-2 mt-auto text-center">2021г.</footer>
 </div>

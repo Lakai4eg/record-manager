@@ -1,11 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
 import * as moment from 'moment';
+import {RegDataTransferService} from "../../reg-data-transfer.service";
+
 
 export interface interval {
   time: string
   name: string
 }
-
 export interface scheduleItem {
   id: number
   name: string
@@ -23,13 +24,14 @@ export interface scheduleItem {
 })
 
 export class scheduleItemComponent implements OnInit {
-  @Input() scheduleItem: scheduleItem | any = {}
-
-  getScheduleItem(tempscheduleItem: any){
-    if (!tempscheduleItem.workTimes){
-      tempscheduleItem.workTimes = this.getTimes()
-    }
-    this.scheduleItem = tempscheduleItem
+  @Input() scheduleItem: scheduleItem = {
+    busyInterval: [],
+    date: "",
+    id: 0,
+    name: "",
+    workTimeEnd: "",
+    workTimeStart: "",
+    workTimes: []
   }
 
   getTimes = ({workTimeStart, workTimeEnd, busyInterval, workTimes} = this.scheduleItem) => {
@@ -60,15 +62,17 @@ export class scheduleItemComponent implements OnInit {
     return modifiedWorkTimes
   }
 
-  timeClick(evt: Event){
 
-  }
-
-  constructor() {
+  constructor(public regData: RegDataTransferService) {
   }
 
   ngOnInit(): void {
-    this.getScheduleItem(this.scheduleItem)
+    this.scheduleItem.workTimes = this.getTimes()
+  }
+
+  ngOnChanges(){
+    this.scheduleItem.workTimes = this.getTimes()
+    console.log('CHANGE')
   }
 
 }
