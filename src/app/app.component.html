@@ -6,8 +6,8 @@
   <header class="bg-dark text-white p-2 mb-auto text-center">
     <h1>Запись к врачу</h1>
   </header>
-  <main class="row d-flex w-100">
-    <aside class="d-flex flex-column mt-1 mb-1">
+  <main class="container d-flex mw-100 flex-wrap">
+    <aside class="mt-1 mb-1 aside-menu">
       <app-calendar
         class="row"
         (onDateChange)="updateDateSelected($event)"
@@ -20,7 +20,7 @@
       </app-specialist-list>
     </aside>
     <app-schedule-controller
-      class="schedule ml-3 mt-1 mb-1"
+      class="row mt-1 mb-1 schedule"
       [allscheduleItems]="allScheduleItems">
     </app-schedule-controller>
   </main>

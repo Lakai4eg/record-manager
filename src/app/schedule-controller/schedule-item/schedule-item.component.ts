@@ -4,6 +4,7 @@ import {RegDataTransferService} from "../../reg-data-transfer.service";
 
 
 export interface interval {
+  id: number
   time: string
   name: string
 }
@@ -41,12 +42,14 @@ export class scheduleItemComponent implements OnInit {
     let modifiedWorkTimes: interval[] = []
     let start = moment(workTimeStart, 'HH:mm').format('HH:mm')
     let end = moment(workTimeEnd, 'HH:mm').format('HH:mm')
-    modifiedWorkTimes.push({time: workTimeStart, name: ''})
+    modifiedWorkTimes.push({id: 0, time: workTimeStart, name: ''})
+    let id = 0
     while (start !== end) {
+      id++
       start = ((start):string=>{
          return moment(start, 'HH,mm').add(10, 'minute').format('HH:mm')
         })(start)
-      modifiedWorkTimes.push({time: start, name: ''})
+      modifiedWorkTimes.push({id: id, time: start, name: ''})
     }
     modifiedWorkTimes.pop()
 
@@ -62,17 +65,13 @@ export class scheduleItemComponent implements OnInit {
     return modifiedWorkTimes
   }
 
-
   constructor(public regData: RegDataTransferService) {
   }
 
   ngOnInit(): void {
     this.scheduleItem.workTimes = this.getTimes()
+    console.log('init')
   }
 
-  ngOnChanges(){
-    this.scheduleItem.workTimes = this.getTimes()
-    console.log('CHANGE')
-  }
 
 }

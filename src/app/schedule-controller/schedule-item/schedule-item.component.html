@@ -7,9 +7,10 @@
         {{item.name}}
       </div>
       <ng-template #showTime>
-        <div class="border-bottom open-time" (click)="regData.openForm(scheduleItem.id, scheduleItem.name, scheduleItem.date, item.time)">{{item.time}}</div>
+        <div class="border-bottom open-time"
+             (click)="regData.openForm(scheduleItem.id, scheduleItem.name, scheduleItem.date, item.time)"
+        >{{item.time}}</div>
       </ng-template>
     </li>
   </ul>
 </article>
-

@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {specialist} from "./specialist-list/specialist-list.component";
 import * as moment from 'moment';
 import {RegDataTransferService} from "./reg-data-transfer.service";
+import {interval} from "./schedule-controller/schedule-item/schedule-item.component";
 
 export class specScheduleItem {
   'id': number
@@ -34,7 +35,7 @@ export class AppComponent implements OnInit{
     {
       id: 0,
       name: 'Аитова Аниса Равильевна',
-      date: '2021-08-11',
+      date: '2021-08-12',
       workTimeStart: '09:00',
       workTimeEnd: '12:30',
       busyInterval: [{time: '10:10', name: 'ОченьДлиннаяФамилия Петр Петрович'}, {time: '10:30', name:'Иванов Иван Иванович'}]
@@ -42,7 +43,7 @@ export class AppComponent implements OnInit{
     {
       id: 0,
       name: 'Аитова Аниса Равильевна',
-      date: '2021-08-12',
+      date: '2021-08-13',
       workTimeStart: '13:30',
       workTimeEnd: '15:30',
       busyInterval: []
@@ -50,7 +51,7 @@ export class AppComponent implements OnInit{
     {
       id: 1,
       name: 'Вавилов Никита Васильевич',
-      date: '2021-08-11',
+      date: '2021-08-12',
       workTimeStart: '10:30',
       workTimeEnd: '15:30',
       busyInterval: []
@@ -58,7 +59,7 @@ export class AppComponent implements OnInit{
     {
       id: 1,
       name: 'Вавилов Никита Васильевич',
-      date: '2021-08-12',
+      date: '2021-08-13',
       workTimeStart: '14:30',
       workTimeEnd: '15:30',
       busyInterval: []
@@ -66,7 +67,7 @@ export class AppComponent implements OnInit{
     {
       id: 2,
       name: 'Гилева Ирина Сергеевна',
-      date: '2021-08-11',
+      date: '2021-08-12',
       workTimeStart: '13:30',
       workTimeEnd: '15:30',
       busyInterval: []
@@ -74,27 +75,19 @@ export class AppComponent implements OnInit{
     {
       id: 3,
       name: 'Ковалева Наталья Васильевна',
-      date: '2021-08-11',
+      date: '2021-08-12',
       workTimeStart: '10:00',
       workTimeEnd: '16:00',
       busyInterval: []
     },
     {
       id: 4,
-      name: 'Маматов Евгения Александровна',
-      date: '2021-08-11',
+      name: 'Маматова Евгения Александровна',
+      date: '2021-08-12',
       workTimeStart: '11:30',
       workTimeEnd: '17:00',
       busyInterval: [{time: '13:50', name: 'ОченьДлиннаяФамилия Петр Петрович'}, {time: '14:40', name:'Иванов Иван Иванович'}]
     },
-    {
-      id: 0,
-      name: 'Аитова Аниса Равильевна',
-      date: '2021-08-10',
-      workTimeStart: '10:00',
-      workTimeEnd: '14:30',
-      busyInterval: [{time: '10:10', name: 'Петров Петр Петрович'}, {time: '10:30', name:'ОченьДлиннаяФамилия Иван Иванович'}]
-    }
   ]
   workingSpecs: any[] = []
   allScheduleItems: any[] = []
@@ -146,9 +139,11 @@ export class AppComponent implements OnInit{
           name: patientName
         })
     }
-    // this.updateShowedSpec({id: specId, name: specName, checked: false})
+    setTimeout(()=>{
+      this.updateShowedSpec({id: specId, name: specName, checked: false})
+    })
     this.updateShowedSpec({id: specId, name: specName, checked: true})
-    }
+}
 
   ngOnInit(): void {
   }

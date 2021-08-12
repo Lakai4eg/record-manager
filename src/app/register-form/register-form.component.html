@@ -17,7 +17,7 @@
             placeholder="Введите ФИО"
             aria-label="FIO"
             [(ngModel)]="regData.record.patientName"
-          >
+            (keydown.enter)="recordAdd()">
         </div>
       </div>
       <div class="modal-footer">
