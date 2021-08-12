@@ -70,7 +70,6 @@ export class scheduleItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.scheduleItem.workTimes = this.getTimes()
-    console.log('init')
   }
 
 

@@ -88,6 +88,30 @@ export class AppComponent implements OnInit{
       workTimeEnd: '17:00',
       busyInterval: [{time: '13:50', name: 'ОченьДлиннаяФамилия Петр Петрович'}, {time: '14:40', name:'Иванов Иван Иванович'}]
     },
+    {
+      id: 5,
+      name: 'Опарина Ольга Александровна',
+      date: '2021-08-12',
+      workTimeStart: '12:30',
+      workTimeEnd: '15:00',
+      busyInterval: [{time: '13:50', name: 'ОченьДлиннаяФамилия Петр Петрович'}, {time: '14:40', name:'Иванов Иван Иванович'}]
+    },
+    {
+      id: 6,
+      name: 'Тихомирова Нелли Григорьевна',
+      date: '2021-08-12',
+      workTimeStart: '13:30',
+      workTimeEnd: '16:00',
+      busyInterval: [{time: '13:50', name: 'ОченьДлиннаяФамилия Петр Петрович'}, {time: '14:40', name:'Иванов Иван Иванович'}]
+    },
+    {
+      id: 7,
+      name: 'Ширинкина Антонида Анатольевна',
+      date: '2021-08-12',
+      workTimeStart: '11:30',
+      workTimeEnd: '16:00',
+      busyInterval: [{time: '13:50', name: 'ОченьДлиннаяФамилия Петр Петрович'}, {time: '14:40', name:'Иванов Иван Иванович'}]
+    },
   ]
   workingSpecs: any[] = []
   allScheduleItems: any[] = []

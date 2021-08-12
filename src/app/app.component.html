@@ -2,27 +2,25 @@
   [hidden]="regData.regFormHidden"
   (onRecordAdd)="addRecord()"
 ></app-register-form>
-<div class="container">
-  <header class="bg-dark text-white p-2 mb-auto text-center">
+<div class="page-container">
+  <header class="bg-dark text-white mb-auto text-center pb-2 pt-2">
     <h1>Запись к врачу</h1>
   </header>
-  <main class="container d-flex mw-100 flex-wrap">
+  <main class="main-container d-flex w-100">
     <aside class="mt-1 mb-1 aside-menu">
       <app-calendar
-        class="row"
         (onDateChange)="updateDateSelected($event)"
       ></app-calendar>
       <app-specialist-list
-        class="row d-flex flex-column"
+        class="d-flex flex-column overflow-auto mh-100"
         [specList]="workingSpecs"
         (onSpecClick)="updateShowedSpec($event)"
       >
       </app-specialist-list>
     </aside>
     <app-schedule-controller
-      class="row mt-1 mb-1 schedule"
+      class="mt-1 mb-1 schedule"
       [allscheduleItems]="allScheduleItems">
     </app-schedule-controller>
   </main>
-  <footer class="bg-dark text-white p-2 mt-auto text-center">2021г.</footer>
 </div>

@@ -3,7 +3,10 @@
   <div class="name">{{scheduleItem.name}}</div>
   <ul class="scheduleItems">
     <li class="schedule__item" *ngFor="let item of scheduleItem.workTimes">
-      <div class="border-bottom bg-success bg-gradient text-truncate closed-time" *ngIf="item.name; else showTime">
+      <div class="border-bottom bg-success bg-gradient text-truncate closed-time pl-1 pr-1"
+           *ngIf="item.name; else showTime"
+           [title]="item.name"
+      >
         {{item.name}}
       </div>
       <ng-template #showTime>
