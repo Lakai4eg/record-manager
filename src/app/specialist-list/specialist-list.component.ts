@@ -3,7 +3,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export interface specialist {
   id: number
   name: string
-  checked: boolean
+  checked?: boolean
 }
 
 @Component({

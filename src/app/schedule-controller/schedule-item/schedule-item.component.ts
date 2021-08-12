@@ -4,7 +4,6 @@ import {RegDataTransferService} from "../../reg-data-transfer.service";
 
 
 export interface interval {
-  id: number
   time: string
   name: string
 }
@@ -42,14 +41,13 @@ export class scheduleItemComponent implements OnInit {
     let modifiedWorkTimes: interval[] = []
     let start = moment(workTimeStart, 'HH:mm').format('HH:mm')
     let end = moment(workTimeEnd, 'HH:mm').format('HH:mm')
-    modifiedWorkTimes.push({id: 0, time: workTimeStart, name: ''})
-    let id = 0
+    modifiedWorkTimes.push({time: workTimeStart, name: ''})
+
     while (start !== end) {
-      id++
       start = ((start):string=>{
          return moment(start, 'HH,mm').add(10, 'minute').format('HH:mm')
         })(start)
-      modifiedWorkTimes.push({id: id, time: start, name: ''})
+      modifiedWorkTimes.push({time: start, name: ''})
     }
     modifiedWorkTimes.pop()
 
